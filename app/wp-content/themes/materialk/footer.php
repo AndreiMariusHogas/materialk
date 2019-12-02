@@ -44,24 +44,7 @@
             </div>
           </div>
 </footer>
-<div id="searchBox">
-      <form>
-        <div class="row">
-          <div class="col s11 m11 l11">
-            <label for="search"></label>
-              <input type="text" name="search" id="search" placeholder="What are you looking for?">
-          </div>
-          <div class="col s1 m1 l1">
-            <i id="closeTrigger" class="fas fa-times-circle"></i>
-          </div>
-        </div>
-      </form>
-      <div class="container">
-        <div id="searchResults">
-          HELLO 123
-        </div>
-      </div>
-  </div>
+
 
 <?php wp_footer(); ?>
 </body>

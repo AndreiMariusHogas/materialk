@@ -3,6 +3,7 @@ console.log('the search script is here');
 class Search {
     //setup Object
     constructor(){
+        this.addSearchBox();
         this.openButton = $('#searchTrigger');
         this.closeButton =$('#closeTrigger');
         this.searchBox = $('#searchBox');
@@ -42,7 +43,7 @@ class Search {
                     this.searchResult.html(this.loader);
                     this.isLoading = true;
                 }
-                this.inputTimer = setTimeout(this.getResults.bind(this), 2000);
+                this.inputTimer = setTimeout(this.getResults.bind(this), 500);
                 this.previousValue = this.searchInput.val();
             }else{
                 this.searchResult.html('');
@@ -51,17 +52,56 @@ class Search {
         }
     }
     getResults(){
-        $.getJSON('http://localhost/lepetitfromage/app/wp-json/wp/v2/posts?search='+ this.searchInput.val(), function(data){
-         alert(data[0]['title']['rendered']);
-        })
+        $.when(
+            $.getJSON(materialkData.root_url + '/wp-json/wp/v2/posts?search='+ this.searchInput.val()),
+            $.getJSON(materialkData.root_url + '/wp-json/wp/v2/pages?search='+ this.searchInput.val())
+        ).then( (posts,pages ) => {
+            let resultsArr = posts[0].concat(pages[0]);
+                if(resultsArr.length > 0){
+                    this.searchResult.html(`
+                    <h3 class="flow-text center red-text" >Search Results:</h3>
+                    <div class="collection">
+                    ${resultsArr.map(item => `<a href="${item.link}" class="collection-item">${item['title']['rendered']}</a>`).join('')}
+                    </div>
+                 `);
+                 this.isLoading = false;
+                }else{
+                    this.searchResult.html('<h3 class="flow-text center red-text" ><em>Nothing found. Try again</em></h3>')
+                    this.isLoading = false;
+                }
+        }, () => {
+            this.searchResult.html('<h3 class="flow-text center red-text" ><em>Unexpected Error. Please try again</em></h3>')
+        });
     }
     openSearchBox() {
         this.searchBox.css('display','block');
         $('body').css('overflow','hidden');
+        this.searchInput.val('');
+        this.searchResult.html('');
+        setTimeout(() => this.searchInput.focus(),301);
     }
     closeSearchBox() {
         this.searchBox.css('display','none');
         $('body').css('overflow','scroll');
+    }
+    addSearchBox() {
+        $('body').append(`
+        <div id="searchBox">
+        <div class="row">
+            <div class="col s11 m11 l11">
+                <label for="search"></label>
+                <input type="text" name="search" id="search" placeholder="What are you looking for?">
+            </div>
+                <div class="col s1 m1 l1">
+                    <i id="closeTrigger" class="fas fa-times-circle"></i>
+                </div>
+                </div>
+            <div class="container">
+                <div id="searchResults">
+                </div>
+            </div>
+        </div>
+        `);
     }
     
     }

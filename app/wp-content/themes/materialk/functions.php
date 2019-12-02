@@ -39,6 +39,9 @@ function hamDev_files(){
     wp_enqueue_style('google-fonts','//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
     wp_enqueue_script('font-awesome','https://kit.fontawesome.com/af56c7136d.js');
     wp_enqueue_style('hamdev-index-dev-style', get_stylesheet_uri());
+    wp_localize_script('hamdev-main-scripts-search', 'materialkData',array(
+        'root_url' => get_site_url()
+    ));
 }   
 add_action('wp_enqueue_scripts','hamDev_files');
 
