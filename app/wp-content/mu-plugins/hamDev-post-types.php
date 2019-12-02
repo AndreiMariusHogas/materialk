@@ -32,6 +32,7 @@ function hamDev_post_types(){
     ));
     //Chef Registration
     register_post_type('chef',array(
+        'show_in_rest' => true,
         'supports' => array('title', 'thumbnail','editor','page-attributes','excerpt','custom-fields'),
         'public' => true,
         'labels' => array(

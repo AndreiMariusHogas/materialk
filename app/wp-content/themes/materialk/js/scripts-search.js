@@ -61,7 +61,7 @@ class Search {
                     this.searchResult.html(`
                     <h3 class="flow-text center red-text" >Search Results:</h3>
                     <div class="collection">
-                    ${resultsArr.map(item => `<a href="${item.link}" class="collection-item">${item['title']['rendered']}</a>`).join('')}
+                    ${resultsArr.map(item => `<a href="${item.link}" class="collection-item">${item['title']['rendered']} ${ item.type == 'post' ? `<small class="red-text">by ${item.authorName}</small>`: ''} </a>`).join('')}
                     </div>
                  `);
                  this.isLoading = false;
