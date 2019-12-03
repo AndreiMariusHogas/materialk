@@ -57,33 +57,33 @@ class Search {
             this.searchResult.html(`
                 <div class="row">
                     <div class="col s12 m4 l4">
-                        <h3 class="flow-text center red-text">General Results:</h3>
+                        <h3 class="flow-text  red-text">General Results:</h3>
                         <hr>
-                        ${results.mainInfo.length ? `<div class="collection">` : `<p class="flow-text grey-text center" >No General Results</p>` }
+                        ${results.mainInfo.length ? `<div class="collection">` : `<p class="flow-text grey-text " ><em>No General Results</em></p>` }
                             ${results.mainInfo.map(item => `<a href="${item.url}" class="collection-item">${item.name} ${item.postType == 'post' ? `<small class="grey-text"> by ${item.authorName}`: ''}</small></a>`).join('')}
                         ${results.mainInfo.length ? `</div>` : '' }
                     </div>
                     <div class="col s12 m4 l4">
-                        <h3 class="flow-text center red-text" >Recipes:</h3>
+                        <h3 class="flow-text  red-text" >Recipes:</h3>
                         <hr>
-                        ${results.recipes.length ? `<div class="collection">` : `<p class="flow-text grey-text center" ><em>No Recipes Results</em></p>` }
+                        ${results.recipes.length ? `<div class="collection">` : `<p class="flow-text grey-text " ><em>No Recipes Results</em></p>` }
                             ${results.recipes.map(item => `<a href="${item.url}" class="collection-item">${item.name}</a>`).join('')}
                         ${results.recipes.length ? `</div>` : '' }
-                        <h3 class="flow-text center red-text" >Chefs:</h3>
+                        <h3 class="flow-text  red-text" >Chefs:</h3>
                         <hr>
-                        ${results.chefs.length ? `<div class="collection">` : `<p class="flow-text grey-text center" ><em>No Chefs Results</em></p>` }
+                        ${results.chefs.length ? `<div class="collection">` : `<p class="flow-text grey-text " ><em>No Chefs Results</em></p>` }
                             ${results.chefs.map(item => `<a href="${item.url}" class="collection-item"> ${item.name}</a>`).join('')}
                         ${results.chefs.length ? `</div>` : '' }
                     </div>
                     <div class="col s12 m4 l4">
-                    <h3 class="flow-text center red-text" >Locations:</h3>
+                    <h3 class="flow-text  red-text" >Locations:</h3>
                     <hr>
-                    ${results.locations.length ? `<div class="collection">` : `<p class="flow-text grey-text center"><em>No Locations Results</em></p>` }
+                    ${results.locations.length ? `<div class="collection">` : `<p class="flow-text grey-text "><em>No Locations Results</em></p>` }
                         ${results.locations.map(item => `<a href="${item.url}" class="collection-item">${item.name}</a>`).join('')}
                     ${results.locations.length ? `</div>` : '' }
-                    <h3 class="flow-text center red-text">Events:</h3>
+                    <h3 class="flow-text  red-text">Events:</h3>
                     <hr>
-                    ${results.events.length ? `<div class="collection">` : `<p class="flow-text grey-text center"><em>No Events Results</em></p>` }
+                    ${results.events.length ? `<div class="collection">` : `<p class="flow-text grey-text "><em>No Events Results</em></p>` }
                             ${results.events.map(item => `<a href="${item.url}" class="collection-item">${item.name}</a>`).join('')}
                     ${results.events.length ? `</div>` : '' }
                     </div>
