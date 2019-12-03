@@ -91,9 +91,6 @@ class Search {
             `)
             this.isLoading = false;
         });
-    
-        //delete this after creation
-
     }
     openSearchBox() {
         this.searchBox.css('display','block');

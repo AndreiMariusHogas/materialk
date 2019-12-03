@@ -2,6 +2,8 @@
 function hamDev_post_types(){
     //Events Registration
     register_post_type('event',array(
+        'capability_type' => 'event',
+        'map_meta_cap' => true,
         'rewrite' => array('slug' => 'events'),
         'has_archive' => true,
         'supports'=> array('title','thumbnail','editor','page-attributes','excerpt','custom-fields'),
@@ -17,6 +19,8 @@ function hamDev_post_types(){
     ));   
     //Recipe Registration
     register_post_type('recipe',array(
+        'capability_type' => 'recipe',
+        'map_meta_cap' => true,
         'rewrite' => array('slug' => 'recipes'),
         'has_archive' => true, 
         'supports' => array('title', 'thumbnail','editor','page-attributes','excerpt','custom-fields'),
@@ -32,6 +36,8 @@ function hamDev_post_types(){
     ));
     //Chef Registration
     register_post_type('chef',array(
+        'capability_type' => 'chef',
+        'map_meta_cap' => true,
         'show_in_rest' => true,
         'supports' => array('title', 'thumbnail','editor','page-attributes','excerpt','custom-fields'),
         'public' => true,
@@ -46,6 +52,8 @@ function hamDev_post_types(){
     ));
     //Location Registration
     register_post_type('location',array(
+        'capability_type' => 'location',
+        'map_meta_cap' => true,
         'rewrite' => array('slug' => 'locations'),
         'has_archive' => true,
         'supports'=> array('title','thumbnail','editor','page-attributes','excerpt','custom-fields'),
