@@ -15,5 +15,6 @@ require get_theme_file_path('./inc/features.php');
 require get_theme_file_path('./inc/custom-rest.php');
 //Sub Account Homepage Redirect
 require get_theme_file_path('./inc/hompage-redirect.php');
-
+//Custom Login/Signup
+require get_theme_file_path('./inc/custom-login.php');
 ?>

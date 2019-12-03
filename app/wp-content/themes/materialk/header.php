@@ -22,8 +22,8 @@
                 <li><a href="<?php echo wp_logout_url();?>" class="btn-small cyan">Logout</a></li>
             <?php
               }else{ ;?>
-                <li><a class="btn-small">Login</a></li>
-                <li><a href="<?php echo esc_url(site_url('/wp-signup.php'));?>" class="btn-small">Sign Up</a></li>
+                <li><a href="<?php echo wp_login_url();?>" class="btn-small">Login</a></li>
+                <li><a href="<?php echo wp_registration_url();?>" class="btn-small">Sign Up</a></li>
             <?php  
               }
             ;?>
