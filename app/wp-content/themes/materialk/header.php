@@ -17,8 +17,17 @@
             <li <?php if(get_post_type() == 'event' or is_page('past-events')) echo 'class="active"'?>><a href="<?php echo get_post_type_archive_link('event');?>">Events</a></li>
             <li <?php if(get_post_type() == 'location' or is_page('locations')) echo 'class="active"'?>><a href="<?php echo get_post_type_archive_link('location');?>">Locations</a></li>
             <li <?php if(get_post_type() == 'post') echo 'class="active"'?>><a href="<?php echo site_url('/blog');?>">Blog</a></li>
-            <li><a class="btn-small">Login</a></li>
-            <li><a class="btn-small">Sign Up</a></li>
+            <?php 
+              if(is_user_logged_in()){ ;?>
+                <li><a href="<?php echo wp_logout_url();?>" class="btn-small cyan">Logout</a></li>
+            <?php
+              }else{ ;?>
+                <li><a class="btn-small">Login</a></li>
+                <li><a href="<?php echo esc_url(site_url('/wp-signup.php'));?>" class="btn-small">Sign Up</a></li>
+            <?php  
+              }
+            ;?>
+            
             <li>
               <a><i id="searchTrigger" class="fas fa-search" aria-hidden="true"></i></a>
             </li>
