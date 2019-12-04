@@ -7,7 +7,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<nav>
+<nav class=" blue-grey darken-4">
     <div class="nav-wrapper">
       <a href="<?php echo site_url('/');?>" class="brand-logo">Food Palace</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
@@ -19,11 +19,11 @@
             <li <?php if(get_post_type() == 'post') echo 'class="active"'?>><a href="<?php echo site_url('/blog');?>">Blog</a></li>
             <?php 
               if(is_user_logged_in()){ ;?>
-                <li><a href="<?php echo wp_logout_url();?>" class="btn-small cyan">Logout</a></li>
+                <li><a href="<?php echo wp_logout_url();?>" class="btn-small  light-blue accent-2">Logout</a></li>
             <?php
               }else{ ;?>
-                <li><a href="<?php echo wp_login_url();?>" class="btn-small">Login</a></li>
-                <li><a href="<?php echo wp_registration_url();?>" class="btn-small">Sign Up</a></li>
+                <li><a href="<?php echo wp_login_url();?>" class="btn-small  light-blue accent-2">Login</a></li>
+                <li><a href="<?php echo wp_registration_url();?>" class="btn-small  light-blue accent-2">Sign Up</a></li>
             <?php  
               }
             ;?>

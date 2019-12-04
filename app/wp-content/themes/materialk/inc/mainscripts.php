@@ -12,7 +12,8 @@ function hamDev_files(){
     wp_enqueue_script('font-awesome','https://kit.fontawesome.com/af56c7136d.js');
     wp_enqueue_style('hamdev-index-dev-style', get_stylesheet_uri());
     wp_localize_script('hamdev-main-scripts-search', 'materialkData',array(
-        'root_url' => get_site_url()
+        'root_url' => get_site_url(),
+        'nonce' => wp_create_nonce('wp_rest')
     ));
 }   
 add_action('wp_enqueue_scripts','hamDev_files');

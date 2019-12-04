@@ -93,14 +93,14 @@ class Search {
         });
     }
     openSearchBox() {
-        this.searchBox.css('display','block');
+        this.searchBox.fadeIn();
         $('body').css('overflow','hidden');
         this.searchInput.val('');
         this.searchResult.html('');
         setTimeout(() => this.searchInput.focus(),301);
     }
     closeSearchBox() {
-        this.searchBox.css('display','none');
+        this.searchBox.fadeOut();
         $('body').css('overflow','scroll');
     }
     addSearchBox() {
