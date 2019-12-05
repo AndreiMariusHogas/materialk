@@ -5,12 +5,12 @@ jumbotronBackgroundImage(array(
 ))?>
 
 <div class="container">
-    <ul class="collapsible">
+    <ul class="collapsible orange lighten-5">
     <?php
         while(have_posts()) {
             the_post();?>
         <li>
-            <div class="collapsible-header"><h5><?php the_title();?></h5>
+            <div class="collapsible-header orange lighten-5"><h5 class="deep-orange-text"><?php the_title();?></h5>
             </div>
                 <div class="collapsible-body">
                 <p><?php if (has_excerpt()) {

@@ -13,7 +13,7 @@
                     <p id="recipeName" class="flow-text"><a href="<?php echo get_post_type_archive_link('location');?>">
                         <i class="fas fa-home" aria-hidden="true"></i> 
                         All Locations</a> 
-                        <span class="red-text"><?php the_title(); ?></span>
+                        <span class="deep-orange-text"><?php the_title(); ?></span>
                     </p>
                     </div>
                 </div>

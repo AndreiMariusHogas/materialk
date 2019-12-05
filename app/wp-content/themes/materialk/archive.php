@@ -8,11 +8,12 @@ jumbotronBackgroundImage(array(
     <?php
         while(have_posts()) {
             the_post();?>
-        <div>
+        <div class="card grey darken-4">
+            <div class="card-content">
             <h5>
-                <a href="<?php the_permalink(); ?>"><?php the_title();?></a>
+                <a class="deep-orange-text" href="<?php the_permalink(); ?>"><?php the_title();?></a>
             </h5>
-                <p>
+                <p class="small">
                     <a class="center" href="<?php the_permalink(); ?>">
                         <span>
                             <?php 
@@ -27,10 +28,13 @@ jumbotronBackgroundImage(array(
                         </span>  
                     </a>
                 </p>
-                <p>
+            </div>
+            <div class="card-action">
+            <p class="white-text">
                     <?php echo wp_trim_words(get_the_excerpt(), 10);?>
-                    <a href="<?php the_permalink(); ?>" > Learn more</a>
-                </p>
+                    <a class="deep-orange-text" href="<?php the_permalink(); ?>" > Learn more</a>
+            </p>
+            </div>
         </div>
         <hr>
             
@@ -38,7 +42,6 @@ jumbotronBackgroundImage(array(
         };
             echo paginate_links();
     ?>
-    <p>Looking for a recap of past events? <a href="<?php echo site_url('/past-event');?>">Check out our past events archive</a></p>
 </div>
     
 

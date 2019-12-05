@@ -20,7 +20,7 @@
                 <?php    
                 };
                 ?> 
-                <h3><?php the_title(); ?></h3>
+                <h3 class="deep-orange-text"><?php the_title(); ?></h3>
                 </div>
                 <div class="col s12 m4 l4">
                 <?php 
@@ -29,7 +29,7 @@
                     ));
                     if($parentPage || $childArr){ ?> 
                     <div>
-                        <h5 id="collectionParent"><a href="<?php echo get_permalink($parentPage);?>"><?php echo get_the_title($parentPage); ?> </a></h5>
+                        <h5 id="collectionParent"><a  href="<?php echo get_permalink($parentPage);?>"><?php echo get_the_title($parentPage); ?> </a></h5>
                         <ul>
                             <?php 
                             if($parentPage ){
@@ -65,23 +65,8 @@
   <section>
 
    <div class="container">
-      <h2>Our chefs:</h2>
 
-      <ul>
-       <li>
-       <a href="#">
-           <img src="images/barksalot.jpg">
-           <span>Dr. Barksalot</span>
-         </a>
-       </li>
-       <li>
-       <a href="#">
-           <img src="images/meowsalot.jpg">
-           <span>Dr. Meowsalot</span>
-         </a>
-       </li>
-     </ul>
-     <hr class="section-break">
+     <hr>
 
     <div class="row">
 

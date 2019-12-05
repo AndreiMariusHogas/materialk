@@ -21,7 +21,7 @@
                 <?php 
                 $today = date('Ymd');
                 $eventPosts =  new WP_Query(array(
-                'posts_per_page' => 2,
+                'posts_per_page' => 3,
                 'post_type' => 'event',
                 'meta_key' => 'event_date',
                 'orderby' => 'meta_value_num',
@@ -37,7 +37,7 @@
                 ));
                 while($eventPosts-> have_posts()){
                     $eventPosts -> the_post();?>
-                    <div class="card blue lighten-2">
+                    <div class="card grey darken-4">
                         <div class="card-content white-text">
                         <span class="card-title"><a class="deep-orange-text" href="<?php the_permalink(); ?>"><?php the_title();?></a></span>
                         <span class="blue-grey-text lighten-3"><?php 
@@ -64,19 +64,20 @@
             </div>
             <!--Blog Area-->
             <div class="col s12 m6 l6">
-             <h4 class="center light-blue-text">Blog</h4>
+             <h4 class="center cyan-text">Blog</h4>
              <hr>
              <?php 
                 $homepagePosts = new WP_Query(array(
-                    'posts_per_page' => 2,
+                    'posts_per_page' => 3,
                 ));
                 while($homepagePosts-> have_posts()){
                     $homepagePosts -> the_post(); ?>
-                <div class="card red">
+                <div class="card  cyan darken-4">
                         <div class="card-content white-text">
                         <span class="card-title"><a class="green-text" href="<?php the_permalink(); ?>"><?php the_title();?></a></span>
-                        <span><?php the_time('M'); ?></span>
-                        <span><?php the_time('d'); ?></span>
+                        <span class="blue-grey-text lighten-3"><?php the_time('M'); ?></span>
+                        <span class="blue-grey-text lighten-3"><?php the_time('d'); ?></span>
+                        <span class="blue-grey-text lighten-3"><?php the_time('Y'); ?></span>
                         <p><?php if (has_excerpt()) {
                             echo get_the_excerpt();  
                             }else{
@@ -85,7 +86,7 @@
                             ?></p>
                         </div>
                         <div class="card-action">
-                        <a href="<?php the_permalink(); ?>">Read More</a>
+                        <a class="btn btn-small deep-orange lignten-2" href="<?php the_permalink(); ?>">Read More</a>
                         </div>
                     </div>
             <?php   
@@ -100,30 +101,30 @@
         <div class="row">
             <div class="col offset s12 m12 l12">
             <div class="carousel carousel-slider center">
-                <div class="carousel-item red white-text" href="#one!">
+                <div class="carousel-item red white-text">
                 <h2>First Panel</h2>
-                <p class="white-text">This is your first panel</p>
-                <a class="btn waves-effect white grey-text darken-text-2">button</a>
+                <p class="white-text">Learn more about our goals & history</p>
+                <a href="<?php echo site_url('/about-us');?>" class="btn waves-effect white grey-text darken-text-2">About Us</a>
                 </div>
-                <div class="carousel-item amber white-text" href="#two!">
-                <h2>Second Panel</h2>
-                <p class="white-text">This is your second panel</p>
-                <a class="btn waves-effect white grey-text darken-text-2">button</a>
+                <div class="carousel-item amber white-text">
+                <h2>Recipes</h2>
+                <p class="white-text">Test our recipes for 5 star food</p>
+                <a href="<?php echo get_post_type_archive_link('recipe');?>" class="btn waves-effect white grey-text darken-text-2">View All</a>
                 </div>
-                <div class="carousel-item green white-text" href="#three!">
-                <h2>Third Panel</h2>
-                <p class="white-text">This is your third panel</p>
-                <a class="btn waves-effect white grey-text darken-text-2">button</a>
+                <div class="carousel-item green white-text">
+                <h2>Eventsl</h2>
+                <p class="white-text">Details about our events</p>
+                <a href="<?php echo get_post_type_archive_link('event');?>" class="btn waves-effect white grey-text darken-text-2">View All</a>
                 </div>
-                <div class="carousel-item blue white-text" href="#four!">
-                <h2>Fourth Panel</h2>
-                <p class="white-text">This is your fourth panel</p>
-                <a class="btn waves-effect white grey-text darken-text-2">button</a>
+                <div class="carousel-item blue white-text">
+                <h2>Locations</h2>
+                <p class="white-text">Map of our locations across the country</p>
+                <a  href="<?php echo get_post_type_archive_link('location');?>" class="btn waves-effect white grey-text darken-text-2">button</a>
                 </div>
-                <div class="carousel-item purple white-text" href="#four!">
-                <h2>Fourth Panel</h2>
-                <p class="white-text">This is your fourth panel</p>
-                <a class="btn waves-effect white grey-text darken-text-2">button</a>
+                <div class="carousel-item purple white-text">
+                <h2>Blog</h2>
+                <p class="white-text">Our latest blogposts</p>
+                <a href="<?php echo site_url('/blog');?>" class="btn waves-effect white grey-text darken-text-2">button</a>
                 </div>
                 
             </div>

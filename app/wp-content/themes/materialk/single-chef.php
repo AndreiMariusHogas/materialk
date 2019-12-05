@@ -10,8 +10,8 @@
             <div class="row">
                 <div class="col s12 m12 l12">
                     <div>
-                    <p id="eventName" class="flow-text"><?php the_title(); ?>
-                    </p>
+                    <h2 id="eventName" class="flow-text deep-orange-text"><?php the_title(); ?>
+                    </h2>
                     </div>
                 </div>
             </div>
@@ -27,10 +27,10 @@
                     <?php 
                         $presentedRecipes = get_field('presented_recipes');
                         if($presentedRecipes){
-                            echo '<h6 class="center red-text">Main Dishes:</h6>';
+                            echo '<h6 class="center cyan-text">Main Dishes:</h6>';
                             echo '<div class="collection">';
                             foreach($presentedRecipes as $recipe){;?>
-                                <a class="collection-item" href="<?php echo get_the_permalink($recipe) ;?>"><?php echo get_the_title($recipe) ;?></a>
+                                <a class="collection-item deep-orange-text" href="<?php echo get_the_permalink($recipe) ;?>"><?php echo get_the_title($recipe) ;?></a>
                         <?php
                              };
                              echo '</div>';

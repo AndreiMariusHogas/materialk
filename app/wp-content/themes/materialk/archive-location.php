@@ -30,7 +30,7 @@ jumbotronBackgroundImage(array(
                 while(have_posts()) {
                     the_post();
                     ?>
-                    <a href="<?php the_permalink();?>" class="collection-item"><?php the_title();?></a>
+                    <a  href="<?php the_permalink();?>" class="collection-item deep-orange-text"><?php the_title();?></a>
             <?php
                 };
                     wp_reset_postdata();

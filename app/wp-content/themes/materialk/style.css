@@ -104,6 +104,9 @@ p.flow-text.master-chef{
     left:40%;
 }
 
+h2#eventName{
+    font-size:3rem;
+}
 
 /*Login Page CSS*/
 #login h1 a {

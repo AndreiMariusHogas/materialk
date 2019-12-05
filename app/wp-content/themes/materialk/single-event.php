@@ -11,7 +11,7 @@
                     <p id="eventName" class="flow-text"><a href="<?php echo get_post_type_archive_link('event');?>">
                         <i class="fas fa-home" aria-hidden="true"></i> 
                         Events Home</a> 
-                        <span class="red-text"><?php the_title(); ?></span>
+                        <span class="deep-orange-text"><?php the_title(); ?></span>
                     </p>
                     </div>
                 </div>
@@ -26,19 +26,19 @@
                     <?php 
                         $presentedRecipes = get_field('presented_recipes');
                         if($presentedRecipes){
-                            echo '<h6 class="center red-text">Menu of the event:</h6>';
+                            echo '<h6 class="center cyan-text">Menu of the event:</h6>';
                             echo '<div class="collection">';
                             foreach($presentedRecipes as $recipe){;?>
                                 
                                 
         
-                                <a class="collection-item" href="<?php echo get_the_permalink($recipe) ;?>"><?php echo get_the_title($recipe) ;?></a>
+                                <a class="collection-item deep-orange-text" href="<?php echo get_the_permalink($recipe) ;?>"><?php echo get_the_title($recipe) ;?></a>
                                 
                     <?php
                              };
                              echo '</div>';
                         }else{
-                            echo 'FILL THIS SPACE LATER';
+                            echo '<em>No Menu Available yet</em>';
                         }
                     ?>
                     </div>

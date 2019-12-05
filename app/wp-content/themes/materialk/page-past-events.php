@@ -25,11 +25,12 @@ jumbotronBackgroundImage(array(
                         ));
         while($pastEvents -> have_posts()) {
             $pastEvents -> the_post();?>
-        <div>
+        <div class="card deep-orange lighten-5">
+            <div class="card-content">
             <h5>
                 <a href="<?php the_permalink(); ?>"><?php the_title();?></a>
             </h5>
-                <p>
+                <p class="small">
                     <a class="center" href="<?php the_permalink(); ?>">
                         <span>
                             <?php 
@@ -44,10 +45,13 @@ jumbotronBackgroundImage(array(
                         </span>  
                     </a>
                 </p>
-                <p>
+            </div>
+            <div class="card-action">
+            <p>
                     <?php echo wp_trim_words(get_the_excerpt(), 10);?>
-                    <a href="<?php the_permalink(); ?>" > Learn more</a>
-                </p>
+                    <a class="deep-orange-text" href="<?php the_permalink(); ?>" > Learn more</a>
+            </p>
+            </div>
         </div>
         <hr>
             

@@ -14,7 +14,7 @@
                         <i class="fas fa-home" aria-hidden="true"></i> 
                         All recipes</a>
                         
-                        <span class="red-text"><?php the_title(); ?></span>
+                        <span class="deep-orange-text"><?php the_title(); ?></span>
                     </p>
                     </div>
                 </div>
@@ -28,19 +28,19 @@
             <?php 
                         $shopLocations = get_field('related_shops');
                         if($shopLocations){
-                            echo '<h6 class="center red-text">Available at our locations:</h6>';
+                            echo '<h6 class="center cyan-text">Available at our locations:</h6>';
                             echo '<div class="collection">';
                             foreach($shopLocations as $shop){;?>
                                 
                                 
         
-                                <a class="collection-item" href="<?php echo get_the_permalink($shop) ;?>"><?php echo get_the_title($shop) ;?></a>
+                                <a class="collection-item deep-orange-text" href="<?php echo get_the_permalink($shop) ;?>"><?php echo get_the_title($shop) ;?></a>
                                 
                     <?php
                              };
                              echo '</div>';
                         }else{
-                            echo 'No locations serve this recipe at this moment!';
+                            echo '<em id="recipeError">No locations serve this recipe at this moment!</em>';
                         }
                     ?>
             </div>
@@ -68,11 +68,11 @@
                     )
                     ));
                     if($eventPosts -> have_posts()){
-                        echo '<h6>Upcoming Tasting Events:</h6>';
+                        echo '<h6 class="cyan-text">Upcoming Tasting Events:</h6>';
                         echo '<div class="collection">';
                         while($eventPosts-> have_posts()){
                             $eventPosts -> the_post();?>
-                            <a href="<?php the_permalink();?>" class="collection-item"><?php the_title();?></a>
+                            <a href="<?php the_permalink();?>" class="collection-item deep-orange-text"><?php the_title();?></a>
                     <?php
                     }; 
                     echo '</div>';
@@ -98,14 +98,14 @@
                     )
                     ));
                     if($masterChefs -> have_posts()){
-                        echo '<h6>Recipe Master Chef(s):</h6>';
+                        echo '<h4 class="deep-orange-text" >Recipe Master Chef(s):</h4>';
                         echo '<ul class="collection">';
                         while($masterChefs-> have_posts()){
                             $masterChefs -> the_post();?>
-                        <li class="collection-item avatar">
+                        <li class="collection-item avatar cyan-text">
                         <img src="<?php the_post_thumbnail_url(''); ?>" class="circle">
                             <p class="flow-text master-chef"><?php the_title();?></p>
-                            <a href="<?php the_permalink();?>" class="secondary-content"><i class="fas fa-info-circle"></i> More Info</a>
+                            <a href="<?php the_permalink();?>" class="secondary-content flow-text cyan-text"><i class="fas fa-info-circle cyan-text"></i> More Info</a>
                         </li>
                     <?php
                     }; 
