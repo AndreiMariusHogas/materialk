@@ -1,2 +1,15 @@
-# materialk
-#Hello Hello Hello
+<h1>Materialk</h1>
+<p>Work in progress...</p>
+<br>
+<h3>Install xampp/local/vagrant</h3>
+<p>Clone or download this repository</p>
+<p>Copy the contents of the repository into your htdocs/(preview folder)</p>
+<p>Install required plugins</p>
+<h3>Built with:</h3>
+<ul>
+    <li>Materialize</li>
+    <li>Wordpress API</li>
+    <li>PHP</li>
+    <li>Javascript</li>
+</ul>
+
