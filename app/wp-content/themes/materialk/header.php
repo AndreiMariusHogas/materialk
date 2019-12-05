@@ -7,9 +7,9 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<nav class=" blue-grey darken-4">
+<nav class="blue lighten-2">
     <div class="nav-wrapper">
-      <a href="<?php echo site_url('/');?>" class="brand-logo">Food Palace</a>
+      <a href="<?php echo site_url('/');?>" class="brand-logo"><i class="fas fa-cloud-meatball"></i>Food Palace</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li <?php if(is_page('about-us') or wp_get_post_parent_id(0) == 18 ) echo 'class="active"'?>><a href="<?php echo site_url('/about-us');?>">About Us</a></li>
@@ -19,11 +19,11 @@
             <li <?php if(get_post_type() == 'post') echo 'class="active"'?>><a href="<?php echo site_url('/blog');?>">Blog</a></li>
             <?php 
               if(is_user_logged_in()){ ;?>
-                <li><a href="<?php echo wp_logout_url();?>" class="btn-small  light-blue accent-2">Logout</a></li>
+                <li><a href="<?php echo wp_logout_url();?>" class="btn-small deep-orange lighten-2">Logout</a></li>
             <?php
               }else{ ;?>
-                <li><a href="<?php echo wp_login_url();?>" class="btn-small  light-blue accent-2">Login</a></li>
-                <li><a href="<?php echo wp_registration_url();?>" class="btn-small  light-blue accent-2">Sign Up</a></li>
+                <li><a href="<?php echo wp_login_url();?>" class="btn-small deep-orange lighten-2">Login</a></li>
+                <li><a href="<?php echo wp_registration_url();?>" class="btn-small deep-orange lighten-2">Sign Up</a></li>
             <?php  
               }
             ;?>

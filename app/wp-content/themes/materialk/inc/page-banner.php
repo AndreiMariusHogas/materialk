@@ -12,7 +12,7 @@ function jumbotronBackgroundImage($args = NULL ){;
         if(get_field('page_banner_background_image')){
             $args['image'] = get_field('page_banner_background_image')['sizes']['banner-background'];
         }else{
-            $args['image'] = get_theme_file_uri('/images/ocean.jpg');
+            $args['image'] = get_theme_file_uri('/images/background.jpg');
         }
     }
     ?>
