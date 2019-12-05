@@ -1,7 +1,7 @@
 <?php 
 //Google Maps API 
 function hamDevApiKey($api){
-    $api['key'] = 'AIzaSyAyOQgBZdTx5nEbEmw0uErcGVSYabwNvsM';
+    $api['key'] = 'Your API key';
     return $api;
 };
 
