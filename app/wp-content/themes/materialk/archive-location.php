@@ -24,7 +24,7 @@ jumbotronBackgroundImage(array(
         </div>
         </div>
         <div class="col s12 m4 l4">
-        <h6>All locations:</h6>
+        <h6 class="cyan-text">All locations:</h6>
         <div class="collection">
         <?php
                 while(have_posts()) {

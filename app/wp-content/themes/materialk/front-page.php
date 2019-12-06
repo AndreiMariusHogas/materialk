@@ -119,12 +119,12 @@
                 <div class="carousel-item blue white-text">
                 <h2>Locations</h2>
                 <p class="white-text">Map of our locations across the country</p>
-                <a  href="<?php echo get_post_type_archive_link('location');?>" class="btn waves-effect white grey-text darken-text-2">button</a>
+                <a  href="<?php echo get_post_type_archive_link('location');?>" class="btn waves-effect white grey-text darken-text-2">View All</a>
                 </div>
                 <div class="carousel-item purple white-text">
                 <h2>Blog</h2>
                 <p class="white-text">Our latest blogposts</p>
-                <a href="<?php echo site_url('/blog');?>" class="btn waves-effect white grey-text darken-text-2">button</a>
+                <a href="<?php echo site_url('/blog');?>" class="btn waves-effect white grey-text darken-text-2">View All</a>
                 </div>
                 
             </div>
