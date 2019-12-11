@@ -8,6 +8,7 @@ function hamDev_files(){
     wp_enqueue_script('hamdev-main-scripts', get_theme_file_uri('/js/scripts.js') , NULL, microtime(),true);
     wp_enqueue_script('hamdev-main-scripts-google-maps', get_theme_file_uri('/js/scripts-gm.js') , NULL, microtime(),true);
     wp_enqueue_script('hamdev-main-scripts-search', get_theme_file_uri('/js/scripts-search.js') , NULL, microtime(),true);
+    wp_enqueue_script('hamdev-main-scripts-like', get_theme_file_uri('/js/like.js') , NULL, microtime(),true);
     wp_enqueue_style('google-fonts','//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
     wp_enqueue_script('font-awesome','https://kit.fontawesome.com/af56c7136d.js');
     wp_enqueue_style('hamdev-index-dev-style', get_stylesheet_uri());

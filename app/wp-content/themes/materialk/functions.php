@@ -1,5 +1,5 @@
 <?php
-//Custom REST API
+//Custom Search Route
 require get_theme_file_path('./inc/search-route.php');
 //Jumbotron BackgroundImage Function
 require get_theme_file_path('./inc/page-banner.php');
@@ -17,4 +17,6 @@ require get_theme_file_path('./inc/custom-rest.php');
 require get_theme_file_path('./inc/hompage-redirect.php');
 //Custom Login/Signup
 require get_theme_file_path('./inc/custom-login.php');
+//Like Route
+require get_theme_file_path('./inc/like-route.php');
 ?>
