@@ -24,6 +24,40 @@
                     </div>
                     <div class="col s12 m4 l4">
                     <img class="responsive-img" src="<?php the_post_thumbnail_url();?>">
+                    <p class="center">
+                    <?php 
+                        $likeCount = new WP_Query(array(
+                            'post_type' => 'like',
+                            'meta_query' => array(
+                                array(
+                                    'key' => 'liked_chef',
+                                    'compare' => '=',
+                                    'value' => get_the_ID()
+                                )
+                            )
+                        ));
+                        $existQuery = new WP_Query(array(
+                            'author' => get_current_user_id(),
+                            'post_type' => 'like',
+                            'meta_query' => array(
+                                array(
+                                    'key' => 'liked_chef',
+                                    'compare' => '=',
+                                    'value' => get_the_ID()
+                                )
+                            )
+                        ));
+
+                        if($existQuery->found_posts) { ;?>
+                            <i class="fas fa-heart deep-orange-text" aria-hidden="true"></i>
+                    <?php
+                        }else{ ;?>
+                            <i class="far fa-heart deep-orange-text" aria-hidden="true"></i>
+                    <?php 
+                        }; 
+                    ?>
+                     <span class="flow-text deep-orange-text"><?php echo $likeCount->found_posts;?></span>
+                     </p>
                     <?php 
                         $presentedRecipes = get_field('presented_recipes');
                         if($presentedRecipes){
@@ -35,7 +69,7 @@
                              };
                              echo '</div>';
                         }else{
-                            echo 'FILL THIS SPACE LATER';
+                            echo 'No Recipe Specialization';
                         };
                         wp_reset_postdata();
                     ?>
