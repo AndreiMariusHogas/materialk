@@ -24,7 +24,7 @@
                     </div>
                     <div class="col s12 m4 l4">
                     <img class="responsive-img" src="<?php the_post_thumbnail_url();?>">
-                    <p id="chefID" class="center" data-chef="<?php the_ID();?>">
+                    
                     <?php 
                         $likeCount = new WP_Query(array(
                             'post_type' => 'like',
@@ -47,7 +47,9 @@
                                         'value' => get_the_ID()
                                     )
                                 )
-                            ));
+                            ));?>
+                    <p id="chefID" class="center" data-chef="<?php the_ID();?>" data-like="<?php echo $existQuery->posts[0]->ID;?>">
+                    <?php
                             if($existQuery->found_posts) { ;?>
                                 <i class="fas fa-heart deep-orange-text likeFeature" aria-hidden="true"></i>
                     <?php            
@@ -60,7 +62,7 @@
                     <?php 
                         }; 
                     ?>
-                    <span class="flow-text deep-orange-text"><?php echo $likeCount->found_posts;?></span>
+                    <span id="likeCount"class="flow-text deep-orange-text"><?php echo $likeCount->found_posts;?></span>
                     </p>
                     <?php 
                         $presentedRecipes = get_field('presented_recipes');

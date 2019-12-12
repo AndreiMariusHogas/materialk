@@ -29,7 +29,6 @@
                 return wp_insert_post(array(
                     'post_type' => 'like',
                     'post_status' => 'publish',
-                    'post_title' => 'JSTEST',
                     'meta_input' => array(
                         'liked_chef' => $chef
                     )
@@ -44,7 +43,13 @@
 
         
     }
-    function removeLike() {
-        return 'I REMOVED A LIKE';
+    function removeLike($data) {
+        $likeId = sanitize_text_field($data['like']);
+        if(get_current_user_id() == get_post_field('post_author',$likeId) AND get_post_type($likeId) == 'like'){
+            wp_delete_post($likeId, true);
+            return "removed";
+        }else{
+            die('You must be logged in to do that');
+        };        
     }
 ?>

@@ -52,11 +52,21 @@
         <div class="col s12">
         <li class="center"><a href="<?php echo site_url('/blog');?>">Blog</a></li>
         </div>
-        <div class="col s12">
-        <li><a class="btn-small">Login</a></li>
-        </div>
-        <div class="col s12">
-        <li><a class="btn-small">Sign Up</a></li>
-        </div>   
+        <?php 
+              if(is_user_logged_in()){ ;?>
+              <div class="col s12">
+                <li><a href="<?php echo wp_logout_url();?>" class="btn-small deep-orange lighten-2">Logout</a></li>
+              </div>
+            <?php
+              }else{ ;?>
+              <div class="col s12">
+                <li><a href="<?php echo wp_login_url();?>" class="btn-small deep-orange lighten-2">Login</a></li>
+              </div>
+              <div class="col s12">
+                <li><a href="<?php echo wp_registration_url();?>" class="btn-small deep-orange lighten-2">Sign Up</a></li>
+              </div>
+            <?php  
+              }
+            ;?>
     </div>
   </ul>
