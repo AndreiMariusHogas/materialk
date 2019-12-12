@@ -19,17 +19,32 @@
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define( 'DB_NAME', 'lepetitformage' );
+if(file_exists(dirname(__FILE__) . '/local.php')){
+	/** The name of the database for WordPress */
+	define( 'DB_NAME', 'lepetitformage' );
 
-/** MySQL database username */
-define( 'DB_USER', 'root' );
+	/** MySQL database username */
+	define( 'DB_USER', 'root' );
 
-/** MySQL database password */
-define( 'DB_PASSWORD', '' );
+	/** MySQL database password */
+	define( 'DB_PASSWORD', '#XZ_YFS_A+Az' );
 
-/** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+	/** MySQL hostname */
+	define( 'DB_HOST', 'localhost' );
+}else{
+	/** The name of the database for WordPress */
+	define( 'DB_NAME', 'MaterialK-313233c002' );
+
+	/** MySQL database username */
+	define( 'DB_USER', 'hogasandreimarius' );
+
+	/** MySQL database password */
+	define( 'DB_PASSWORD', '#XZ_YFS_A+Az' );
+
+	/** MySQL hostname */
+	define( 'DB_HOST', 'localhost' );
+}
+
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
